@@ -1,0 +1,421 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom properties -- make sure to update to my design */
+:root {
+    --main-font: 'source Sans pro', sans-serif;
+    --secondary-font: 'Source Code pro', monospace;
+
+    --regular-font-weight: 300;
+    --bold-font-weight: 900;
+
+    --h1-font-size: 3rem;
+    --h2-font-size: 2.25rem;
+    --h3-font-size: 1.25rem;
+    --body-font-size: 1rem;
+
+    --light: #fff;
+    --dark: #303030;
+    --pure-yellow: #ffe400;
+    --vivid-orange: #ff652f;
+    --dark-cyan: #14a76c;
+
+    --box-shadow: 0.5rem 0.5rem 1.0rem rgba(0,0,0,1.0);
+}
+
+@media screen and (min-width: 800px) {
+    :root {
+    --h1-font-size: 4.5rem;
+    --h2-font-size: 3.75rem;
+    --h3-font-size: 1.5rem;
+    --body-font-size: 1.125rem;
+    }
+}
+
+/* General Styles */
+
+body {
+    background: var(--light);
+    color: var(--dark);
+    margin: 0;
+    font-family: var(--main-font);
+    font-size: var(--body-font-size);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--bold-font-weight);
+}
+
+:focus {
+    outline: 3px solid var(--pure-yellow);
+    outline-offset: 3px;
+}
+
+
+/* Typography */
+
+h1, h2, h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+
+
+/* --Start of Header-- */
+.header {
+    height: 6rem;
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    margin-top: -3.5rem;
+    float: left;
+    display: inline-block;
+}
+
+.nav {
+    float: right;
+    width: 30rem;
+    margin-right: 2rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: .25rem 0 4rem 1rem;
+    padding: 0;
+}
+
+.link {
+    font-weight: var(--bold-font-weight);
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.link:hover {
+    color: var(--dark-cyan);
+}
+
+/* --End of Header-- */
+
+
+
+/* --combined styling for section titles, subtitles, and my pictures-- */
+/* styling for section titles */
+.intro-title,
+.my-services-title,
+.about-me-title,
+.my-work-title {
+    margin-bottom: .25rem;
+    font-weight: var(--regular-font-weight);
+}
+
+/* margin and font size for section subtitles */
+.intro-subtitle,
+.about-me-subtitle,
+.work-subtitle {
+    margin: 0;
+    font-size: var(--h3-font-size);
+}
+
+/* styling for accent boxes in intro and about me */
+.intro-subtitle,
+.about-me-subtitle {
+    background: var(--pure-yellow);
+    padding: .25rem;
+    font-family: var(--secondary-font);
+    margin-bottom: 1rem;
+}
+
+/* Give images a shadow */
+.intro-img,
+.about-me-img {
+    box-shadow: var(--box-shadow);
+}
+
+
+/* --Start of Introduction Section-- */
+/* Intro postion*/
+.intro {
+    position: relative;
+    padding-top: 2rem;
+}
+
+/* To make name bold */
+.intro-title strong { 
+    display: block;
+}
+
+/* styling for subtitle */
+.intro-subtitle {
+    display: inline-block;
+}
+/* --End of Introduction Section-- */
+
+
+
+
+/* My services section */
+.my-services {
+    background-color: var(--dark);
+    background-image: url(./images/modern-laptop-colorful-close-up-picjumbo-com.jpg);
+    background-size: cover;
+    color: var(--light);
+    text-align: center;
+}
+
+.my-services-title {
+    color: var(--pure-yellow);
+    position: relative;
+}
+
+.my-services-title::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--pure-yellow);
+    opacity: 0.25;
+}
+
+.services {
+    margin-bottom: 4rem;
+}
+
+.service {
+    max-width: 20rem;
+    margin: 0 auto;
+}
+
+
+
+/* About-Me */
+.about-me {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* My work */
+.my-work {
+    background-color: var(--dark);
+    color: var(--light);
+    text-align: center;
+}
+
+.my-work-title {
+    color: var(--pure-yellow);
+    position: relative;
+}
+
+.work-subtitle {
+    color: var(--vivid-orange);
+    font-weight: var(--bold-font-weight);
+    margin-bottom: 2rem;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 0, auto;
+    margin: 3rem;
+}
+
+.portfolio-item {
+    background-color: var(--dark);
+    overflow: hidden;
+}
+
+.portfolio-img {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+    /*padding: .35rem;*/
+    margin: .5rem .5rem;
+}
+
+.portfolio-item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-img:hover,
+.portfolio-item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+
+/* footer */
+.footer {
+    background: #111;
+    color: var(--pure-yellow);
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: var(--h3-font-size);
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-link {
+    font-weight: var(--bold-font-weight);
+}
+
+.footer-link:hover,
+.social-media-link:hover {
+    opacity: .7;
+    color: var(--vivid-orange);
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.social-media-logo {
+    margin: 0 .5rem;
+}
+
+.social-media-link {
+    padding: .5rem;
+}
+
+
+
+/* --Media Query's-- */
+@media screen and (min-width: 800px) {
+    .header {
+        position: fixed;
+    }
+
+    .nav {
+        width: 35rem;
+    }
+}
+/* media query for intro */
+@media screen and (min-width: 800px) {
+    .intro {
+        position: relative;
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        margin-bottom: 20rem;
+        padding-top: 15rem;
+        grid-column-gap: .75em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro-img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+    }
+
+    .intro-subtitle {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -6.5rem;
+        width: calc(100% + 1.5rem);
+    }
+}
+
+
+
+/* media query for my services section */
+@media screen and (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service + .service {
+        margin-left: 5em;
+    }
+}
+
+
+/* media query for about-me section */
+@media screen and (min-width: 800px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2rem;
+    }
+    
+    .about-me-title {
+        grid-area: title;
+    }
+
+    .about-me-subtitle {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1rem;
+        width: calc(100% + 2rem);
+        padding-left: 1rem;
+        padding-right: calc(200px + 4rem);
+    }
+
+    .about-me-img{
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
