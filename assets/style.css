@@ -240,6 +240,15 @@ h3 {
     position: relative;
 }
 
+#pages-link {
+    color: var(--pure-yellow);
+    margin-bottom: 3rem;
+}
+
+#github-repo {
+    color: var(--vivid-orange);
+}
+
 .work-subtitle {
     color: var(--vivid-orange);
     font-weight: var(--bold-font-weight);
@@ -255,6 +264,10 @@ h3 {
     margin: 3rem;
 }
 
+.item {
+    margin: 1rem;
+}
+
 .portfolio-item {
     background-color: var(--dark);
     overflow: hidden;
@@ -265,7 +278,7 @@ h3 {
         transform 750ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
     /*padding: .35rem;*/
-    margin: .5rem .5rem;
+    margin: 1rem;
 }
 
 .portfolio-item:focus {
